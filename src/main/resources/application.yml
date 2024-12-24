@@ -1,0 +1,30 @@
+server:
+    port: 8086
+    servlet:
+        context-path: /case-report
+
+spring:
+    data:
+        mongodb:
+            uri:
+            database: case-report
+
+case-scheduler:
+    cron: 0 0 * * * ?
+    hoursBack: 1
+    minutesBack: 0
+    maxRecords: 0
+    timeZone: Asia/Kolkata
+
+s3:
+    bucket:
+    region: ap-south-1
+    location: case-report/files/
+
+case:
+    csv:
+        headers: id,coaId,status,submitDate,createdDate
+
+generated-files:
+    path: src/main/resources/generatedFiles
+    cleanup-enabled: true
